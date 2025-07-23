@@ -29,7 +29,7 @@ const Sidebar = () => {
   return (
     <aside className='sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-[#131143] 
     p-6 pt-28 text-white max-sm:hidden lg:w-[270px]'>
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-1 flex-col gap-4'>
         {sidebarLinks.map((section) => {
           const isActiveSection =
             pathname === section.href || pathname.startsWith(section.href || '')
@@ -42,10 +42,7 @@ const Sidebar = () => {
               <Link
                 href={section.href}
                 key={section.label}
-                className={cn(
-                  'flex items-center bg-blue-500 gap-4 p-3 rounded-lg hover:bg-blue-600 transition',
-                  { 'bg-blue-500': isActiveSection }
-                )}
+                className={`${isActiveSection ? "bg-blue-500": ""} flex items-center gap-4 p-3 rounded-lg hover:bg-blue-600 transition`}
               >
                 <Icon className="h-5 w-5" />
                 <span>{section.label}</span>

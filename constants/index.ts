@@ -1,5 +1,5 @@
 import {
-  LayoutDashboard,
+  HomeIcon,
   Video,
   MessageSquare,
   PenTool,
@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 
 export const sidebarLinks = [
-  { label: "Dashboard", icon: LayoutDashboard, href: "/dashboard" },
+  { label: "Home", icon: HomeIcon, href: "/" },
   {
     label: "Meetings",
     icon: Video,
