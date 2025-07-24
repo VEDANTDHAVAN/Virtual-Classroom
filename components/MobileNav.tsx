@@ -56,7 +56,7 @@ const MobileNav = () => {
           // Top-level route without children
           if (!section.children) {
             return (
-              <SheetClose asChild key={section.label}>
+              <SheetClose asChild key={section.href}>
                 <Link
                 href={section.href}
                 key={section.label}

@@ -32,7 +32,7 @@ const Sidebar = () => {
       <div className='flex flex-1 flex-col gap-4'>
         {sidebarLinks.map((section) => {
           const isActiveSection =
-            pathname === section.href || pathname.startsWith(section.href || '')
+            pathname === section.href || pathname.startsWith(`${section.href}/` || '')
 
           const Icon = section.icon
 
