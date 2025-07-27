@@ -13,6 +13,17 @@ const Home = () => {
       <Image src="/images/home.png" alt="Home" fill
           className="object-cover object-center" priority/>
      </div>
+     <div className='flex justify-end gap-x-20 sm:gap-x-10'>
+      <div className='bg-cyan-400 max-w-fit rounded-2xl flex h-full flex-col justify-between max-md:px-5 max-md:py-8 lg:p-11'>
+      <h2 className='glassmorphism max-w-[270px] rounded py-2 text-center font-bold text-gray-600 p-2'>Upcoming Meeting at: 10:30 AM</h2>
+      <br />
+      <div className='flex flex-col gap-2'>
+       <h1 className='text-4xl font-extrabold lg:text-7xl text-gray-800'>
+        {time}
+       </h1>
+       <p className='text-lg font-medium lg:text-2xl text-gray-500'>{date}</p>
+      </div> 
+     </div>
      <div className='bg-cyan-400 max-w-fit rounded-2xl flex h-full flex-col justify-between max-md:px-5 max-md:py-8 lg:p-11'>
       <h2 className='glassmorphism max-w-[270px] rounded py-2 text-center font-bold text-gray-600 p-2'>Upcoming Meeting at: 10:30 AM</h2>
       <br />
@@ -21,7 +32,8 @@ const Home = () => {
         {time}
        </h1>
        <p className='text-lg font-medium lg:text-2xl text-gray-500'>{date}</p>
-      </div>
+      </div> 
+     </div>
      </div>
      <MeetingTypeList />
     </section>
