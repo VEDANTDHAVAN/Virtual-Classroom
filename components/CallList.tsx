@@ -70,7 +70,7 @@ const CallList = ({type}:{type: 'ended' | 'upcoming' | 'recordings'}) => {
     <div className='grid grid-cols-1 gap-5 xl:grid-cols-2'>
      {calls && calls.length > 0 ? calls.map((meeting: Call | CallRecording) => (
         <MeetingCard key={(meeting as Call).id} icon={type === 'ended' ? '/icons/previous.svg'
-           : type === 'upcoming' ? '/icons/upcoming.svg' : '/icons/recordings.png'} title={(meeting as Call).state?.custom.description || meeting.filename.substring(0, 26) || 'No Description!'}
+           : type === 'upcoming' ? '/icons/upcoming.svg' : '/icons/recordings.png'} title={(meeting as Call).state?.custom?.description?.substring(0, 26) || meeting?.filename?.substring(0, 26) || 'Personal Meeting'}
           date={meeting.state?.startsAt?.toLocaleString() || meeting.start_time.toLocaleString()}
         isPreviousMeeting={type === 'ended'} buttonIcon1={type === 'recordings' ? '/icons/recordings.png' : undefined}
         handleClick={type === 'recordings' ? () => router.push(`${meeting.url}`) : () => router.push(`/meeting/${meeting.id}`)} 
