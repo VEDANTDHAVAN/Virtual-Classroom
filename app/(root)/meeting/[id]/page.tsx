@@ -1,6 +1,5 @@
 "use client";
 
-import { useParams } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
 import React, { useState } from 'react';
 import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk';
@@ -9,11 +8,13 @@ import MeetingRoom from '@/components/MeetingRoom';
 import { useGetCallById } from '@/hooks/useGetCallById';
 import Loader from '@/components/Loader';
 
-const Meeting = ({params: {id}}:{params: {id: string}}) => {
-  const { user, isLoaded } = useUser();
-  const params = useParams();
+interface MeetingProps {
+  params: {id: string};
+}
 
-  const meetingId = params?.id; // Unwrapped safely
+const Meeting = ({params: {id}}: MeetingProps) => {
+  const { isLoaded } = useUser();
+
   const [isSetUpComplete, setIsSetUpComplete] = useState(false);
   const { call, isCallLoading } = useGetCallById(id);
 
