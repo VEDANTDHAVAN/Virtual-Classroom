@@ -24,7 +24,7 @@ const Home = () => {
        <p className='text-lg font-medium lg:text-2xl text-gray-500'>{date}</p>
       </div> 
      </div>
-     <div className='bg-cyan-400 max-w-fit rounded-2xl flex h-full flex-col justify-between max-md:px-5 max-md:py-8 lg:p-11'>
+     {/*<div className='bg-cyan-400 max-w-fit rounded-2xl flex h-full flex-col justify-between max-md:px-5 max-md:py-8 lg:p-11'>
       <h2 className='glassmorphism max-w-[270px] rounded py-2 text-center font-bold text-gray-600 p-2'>Upcoming Meeting at: 10:30 AM</h2>
       <br />
       <div className='flex flex-col gap-2'>
@@ -33,7 +33,7 @@ const Home = () => {
        </h1>
        <p className='text-lg font-medium lg:text-2xl text-gray-500'>{date}</p>
       </div> 
-     </div>
+     </div>*/}
      </div>
      <MeetingTypeList />
     </section>
