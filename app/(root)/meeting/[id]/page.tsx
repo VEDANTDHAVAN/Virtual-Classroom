@@ -8,11 +8,7 @@ import MeetingRoom from '@/components/MeetingRoom';
 import { useGetCallById } from '@/hooks/useGetCallById';
 import Loader from '@/components/Loader';
 
-interface MeetingProps {
-  params: {id: string};
-}
-
-const Meeting = ({params}: MeetingProps) => {
+const Meeting = ({params}: {params: {id: string}}) => {
   const { isLoaded } = useUser();
 
   const [isSetUpComplete, setIsSetUpComplete] = useState(false);
