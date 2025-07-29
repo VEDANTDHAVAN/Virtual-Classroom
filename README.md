@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 SmartSpace – Virtual Classroom Platform
 
-## Getting Started
+**SmartSpace** is a full-featured virtual classroom platform designed for modern online education. It offers a suite of collaborative tools such as real-time meetings, chat, whiteboard, quizzes, and AI-assisted content creation — all in one seamless experience.
 
-First, run the development server:
+---
+
+## ✨ Features
+
+- 🎥 **Collaborative Meetings** (Google Meet style)
+- 💬 **Real-time Chat** with history and private rooms
+- 🖊️ **Interactive Whiteboard** (like Figma canvas)
+- 🧠 **AI-Generated Quizzes** and manual quiz builder
+- 👨‍💻 **Coding Assessments** with test cases (like LeetCode)
+- 🔐 **Clerk Authentication** (sign-in, sign-up, session handling)
+- 🎨 **ShadCN UI** + Tailwind for modern, clean design
+- ⚙️ **Role-based Access** (students, teachers)
+- ☁️ Optional: Recordings, Notifications, Admin Dashboard
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer        | Technology |
+|--------------|------------|
+| Frontend     | [Next.js 14](https://nextjs.org/) (App Router) |
+| Styling      | [Tailwind CSS](https://tailwindcss.com/), [ShadCN UI](https://ui.shadcn.com/) |
+| Auth         | [Clerk](https://clerk.dev/) |
+| State Mgmt   | React Context / Zustand (optional) |
+| Icons        | Lucide, Heroicons, Custom SVGs |
+| DB (optional)| PostgreSQL via Prisma or Supabase |
+| Hosting      | Vercel / Render / Railway |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repo
 
 ```bash
-npm run dev
+git clone https://github.com/your-username/smartspace.git
+cd smartspace
+````
+
+### 2. Install dependencies
+
+```bash
+pnpm install
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Configure environment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create `.env.local` and set your Clerk keys, DB URL (optional), etc:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+CLERK_PUBLISHABLE_KEY=your_key
+CLERK_SECRET_KEY=your_secret
+NEXT_PUBLIC_CLERK_FRONTEND_API=...
+```
 
-## Learn More
+### 4. Run the app
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm dev
+# or
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Visit `http://localhost:3000`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🧭 Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+/app
+  /(auth)       → sign-in, sign-up pages
+  /dashboard    → user dashboard
+  /meetings     → create/join/view recordings
+  /whiteboard   → collaborative whiteboard
+  /chat         → real-time chat rooms
+  /quiz         → create, take, and view quizzes
+/components     → reusable UI elements
+/constants      → sidebar links, role enums
+/public/icons   → custom SVG icons
+/lib            → utils, Clerk helpers
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📦 Scripts
+
+| Command       | Purpose               |
+| ------------- | --------------------- |
+| `pnpm dev`    | Start dev server      |
+| `pnpm build`  | Build for production  |
+| `pnpm lint`   | Lint using ESLint     |
+| `pnpm format` | Format using Prettier |
+
+---
+
+## 📁 Assets & Design
+
+* Custom SVG icons: `/public/icons/`
+* Logo: `SmartSpace`
+* Gradient backgrounds for cards
+* Mobile-friendly & responsive
+
+---
+
+## 📌 Future Enhancements
+
+* 📹 Meeting recording (via Daily / LiveKit)
+* 🧑‍🏫 Teacher dashboard with analytics
+* 🔔 Notification system
+* 🌐 Multilingual support
+* 🔄 Real-time collaboration using WebSockets or Liveblocks
+
+---
+
+## 👨‍💻 Developed By
+
+**Vedant**
+SE Project | 2025
+Feel free to fork, contribute, and build on this!
+
+---
+
+## 📝 License
+
+MIT – Do anything with it. Just give credit. 😉
