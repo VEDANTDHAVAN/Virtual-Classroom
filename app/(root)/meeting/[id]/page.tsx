@@ -12,11 +12,11 @@ interface MeetingProps {
   params: {id: string};
 }
 
-const Meeting = ({params: {id}}: MeetingProps) => {
+const Meeting = ({params}: MeetingProps) => {
   const { isLoaded } = useUser();
 
   const [isSetUpComplete, setIsSetUpComplete] = useState(false);
-  const { call, isCallLoading } = useGetCallById(id);
+  const { call, isCallLoading } = useGetCallById(params.id);
 
   if(!isLoaded || isCallLoading) return <Loader />;
 
