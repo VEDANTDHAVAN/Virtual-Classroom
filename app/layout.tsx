@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "@stream-io/video-react-sdk/dist/css/styles.css";
 import "react-datepicker/dist/react-datepicker.css"
 import { Toaster } from "@/components/ui/sonner"
+import ConvexClientProvider from "@/providers/ConvexClientProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,6 +44,7 @@ export default function RootLayout({
         colorInputText: '#fff',
       }
     }}>
+      <ConvexClientProvider>
       <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#161925]`}
@@ -50,7 +52,8 @@ export default function RootLayout({
         {children}
         <Toaster />
       </body>
-    </html>
+     </html>
+     </ConvexClientProvider>
     </ClerkProvider>
   );
 }
