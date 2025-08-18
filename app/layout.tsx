@@ -6,6 +6,7 @@ import "@stream-io/video-react-sdk/dist/css/styles.css";
 import "react-datepicker/dist/react-datepicker.css"
 import { Toaster } from "@/components/ui/sonner"
 import ConvexClientProvider from "@/providers/ConvexClientProvider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,7 +50,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#161925]`}
       >
-        {children}
+        <TooltipProvider>{children}</TooltipProvider>
         <Toaster />
       </body>
      </html>

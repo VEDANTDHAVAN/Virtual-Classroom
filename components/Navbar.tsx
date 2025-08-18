@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import MobileNav from './MobileNav'
-import { SignedIn, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, RedirectToSignIn, UserButton } from '@clerk/nextjs'
 
 const Navbar = () => {
   return (
@@ -15,6 +15,11 @@ const Navbar = () => {
        <SignedIn>
           <UserButton />
        </SignedIn>
+
+       <SignedOut>
+        {/* If user is not logged in, auto-redirect to sign-in */}
+        <RedirectToSignIn />
+      </SignedOut>
       <MobileNav />
      </div>
     </nav>

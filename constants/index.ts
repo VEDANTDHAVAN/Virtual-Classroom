@@ -23,6 +23,8 @@ export const sidebarLinks = [
     icon: MessageSquare,
     children: [
       { label: "Chat Rooms", href: "/chat/room" },
+      { label: "Conversations", href: "/chat/conversations"},
+      { label: "Friends", href: "/chat/friends"},
       { label: "Private Messages", href: "/chat/private" },
     ],
   },
